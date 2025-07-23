@@ -1,0 +1,42 @@
+*visual-lualine.txt*                    visual mode statistics lualine plugin
+
+==============================================================================
+Table of Contents                          *visual-lualine-table-of-contents*
+
+1. visual-lualine.nvim                                  |visual-lualine.nvim|
+  - Usage                                              |visual-lualine-usage|
+  - Customization                              |visual-lualine-customization|
+
+==============================================================================
+1. visual-lualine.nvim                                  *visual-lualine.nvim*
+
+A lualine plugin to show the current visual selection statistics.
+
+                                                        *visual-lualine-usage*
+
+>
+  lualine.setup({
+    tabline = {
+      lualine_z = { 'filename', 'visual' },
+    },
+  })
+<
+
+                                                *visual-lualine-configuration*
+
+>
+  sections = {
+    lualine_z = {
+      'filename',
+      {
+        'visual',
+        char_count = true,        -- Show the number of selected characters
+        word_count = true,        -- Show the number of selected words
+        line_count = true,        -- Show the number of selected lines
+        format = '[%dC:%dW:%dL]', -- The format string to customize the display
+      }
+    },
+  }
+<
+
+vim:tw=78:ts=8:noet:ft=help:norl:
